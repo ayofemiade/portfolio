@@ -85,7 +85,7 @@ section{
     
 }
 .home{
-    height: 100vh;
+    height: 120vh;
     width: 100%;
     background: url(image/mum.jpg);
     background-size: cover;
@@ -93,6 +93,7 @@ section{
     display: flex;
     align-items: center;
     justify-content: flex-start;
+   
 }
 
 
@@ -584,9 +585,10 @@ form .submit-btn:hover{
     }
 
 }
-@media(max-width: 800px){
+@media(max-width: 730px){
     #menu-icon{
         display:block;
+        color: var(--main-color);
      }
      .menulist{
         position: absolute;
@@ -598,7 +600,7 @@ form .submit-btn:hover{
         left: 100%;
         display: flex;
         flex-direction: column;
-        background: #000;
+        background: var(--second-bg-color);
         transition: all .6s ease-in-out;
      }
      .menulist a{
@@ -611,6 +613,8 @@ form .submit-btn:hover{
         left: 0;
      }
 }
+
+
 @media(max-width: 590px){
     :root{
         --h1-font:3.4rem;
@@ -637,5 +641,20 @@ form .submit-btn:hover{
         align-items: center;
         gap: 2rem;
         margin-top: 5rem;
+    }
+}
+
+@media(max-width: 590px){
+     .contact-form input,
+    .contact-form textarea {
+        padding: 14px;
+        font-size: 0.85rem;
+    }
+
+    form .submit-btn {
+        padding: 12px 20px;
+        width: 100%;
+        font-size: 14px;
+        border-radius: 12px;
     }
 }
