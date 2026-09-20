@@ -135,7 +135,7 @@ section {
     background-position: center right;
 }
 .home-text {
-    max-width: 800px;
+    max-width: 600px;
     padding-top: 80px;
 }
 .home-text h1 {
@@ -144,12 +144,27 @@ section {
     line-height: 1.1;
     margin-bottom: 10px;
 }
-.home-text h4 {
-    font-size: 1.5rem;
+.hero-titles {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 12px;
+    row-gap: 4px;
+    font-size: 1.25rem;
     font-weight: 500;
     color: var(--accent-color);
     margin-bottom: 25px;
     font-family: 'Inter', sans-serif;
+}
+.hero-titles li {
+    display: flex;
+    align-items: center;
+}
+.hero-titles li:not(:last-child)::after {
+    content: '|';
+    margin-left: 12px;
+    color: var(--accent-color);
+    opacity: 0.6;
 }
 .home-desc {
     font-size: var(--p-font);
@@ -306,6 +321,9 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
 }
+.expertise-4-cols {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
 .box {
     background: var(--second-bg-color);
     padding: 2.5rem;
@@ -384,6 +402,131 @@ section {
 }
 .timeline-item p {
     color: var(--ann-color);
+}
+.achievement-list {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+}
+.achievement-list li {
+    position: relative;
+    color: var(--ann-color);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+.achievement-list li::before {
+    content: '→';
+    position: absolute;
+    left: -1.5rem;
+    color: var(--accent-color);
+}
+
+/* Publications Section */
+.publications {
+    background: var(--bg-color);
+}
+.pub-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+.research-highlight {
+    background: var(--second-bg-color);
+    padding: 3rem;
+    border-radius: 8px;
+    border-top: 3px solid var(--accent-color);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    margin-bottom: 3rem;
+    border: 1px solid var(--alt-color);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+.research-img img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    object-fit: cover;
+    aspect-ratio: 4/3;
+}
+.research-highlight h3 {
+    font-size: 2rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.research-highlight h3 i {
+    color: var(--accent-color);
+}
+.research-highlight h4 {
+    font-size: 1.3rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+.research-highlight p {
+    color: var(--ann-color);
+    margin-bottom: 1rem;
+}
+.download-cta {
+    text-align: center;
+    margin: 4rem 0;
+}
+.download-cta h4 {
+    font-size: 1.5rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+.download-cta p {
+    color: var(--ann-color);
+    margin-bottom: 2rem;
+}
+.download-cta .btn1 {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+.pdf-notice {
+    font-size: 0.85rem !important;
+    color: var(--other-color) !important;
+    margin-top: 1rem !important;
+}
+
+/* Work With Me Section */
+.work-with-me {
+    background: var(--bg-color);
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+.service-card {
+    background: var(--second-bg-color);
+    padding: 2.5rem 2rem;
+    border-radius: 8px;
+    border-top: 3px solid var(--accent-color);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    transition: var(--transition);
+}
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+.sc-icon i {
+    font-size: 2.5rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+.service-card h4 {
+    font-size: 1.4rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+.service-card p {
+    color: var(--ann-color);
+    font-size: 0.95rem;
 }
 
 /* Contact Section */
@@ -521,7 +664,7 @@ section {
 }
 
 @media (max-width: 991px) {
-    .about, .timeline-container, .contact {
+    .about, .timeline-container, .contact, .research-highlight {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
